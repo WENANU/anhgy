@@ -1,0 +1,184 @@
+$(function(){
+	$(".list_box0 .li").click(function(){
+		$(this).find(".ewm_box").slideToggle();
+	});
+	
+	$('.search_btn').on('click',function(){
+		$('.search-dialog-box').toggleClass("on");
+	});
+	
+	$('.search-dialog-box .pub-close').on('click',function(){
+		$('.search-dialog-box').removeClass("on");
+	});
+	
+	$('.btn[name]').click(function() {
+		var tf_name_id = $(this).attr('name');
+		$('.tc[name=' + tf_name_id + ']').addClass('act');
+	});
+	$('.close').click(function() {
+		$(this).parents('.tc').removeClass('act')
+	});
+	$('.tc-bg').click(function() {
+		$(this).parents('.tc').removeClass('act')
+	});
+	
+	$(".miso-wailian .box .box_rr .con").hover(function(){
+		$(this).find(".dl").stop().slideDown(300);
+		}, function() {
+		$(this).find(".dl").stop().slideUp(300);
+	});
+
+
+
+//历任领导
+
+$(".ej_lrld .box>.bt span").click(function(){
+
+	if($(this).hasClass("on")){
+		$(this).removeClass("on")
+		$(this).parent().parent().find(".con").slideUp();
+	}else{
+		$(this).addClass("on")
+		$(this).parent().parent().find(".con").slideDown();
+	}
+	
+})
+
+
+
+	
+	//移动端导航
+
+
+    $(".ej_main .left .wej_lmmc .wap_ej_btn").click(function(){
+		if($(".ej_main .left .ej_zc_dh").hasClass("on")){
+			$(".ej_main .left .ej_zc_dh").slideUp();
+			$(".ej_main .left .ej_zc_dh").removeClass("on");
+		}else{
+			$(".ej_main .left .ej_zc_dh").slideDown();
+			$(".ej_main .left .ej_zc_dh").addClass("on");
+		}
+		
+	})
+
+
+
+	   $("#m_nav .title .list").css({"opacity":"1","visibility":"visible"});
+	  /* $("#m_nav .title .a").attr("href","javascript:void(0)");
+	   $("#m_nav .title .void>a").attr("href","javascript:void(0)");*/
+	   $("#m_nav .title i").click(function(){
+		   var tt = $(this).parents(".title");
+		  if ($(tt).hasClass('on')) {
+			  $(tt).children(".list").slideUp(600); //展开
+			  $(tt).removeClass("on"); 
+			}else{
+			  $("#m_nav .title ").removeClass("on");
+			  $("#m_nav .title .list").slideUp();
+			  $(tt).children(".list").slideDown();
+			  $(tt).toggleClass("on"); 
+			}
+	   });
+	   /*$("#m_nav .sub").hide();
+	   $("#m_nav .void").click(function(){
+			$(this).children(".sub").slideToggle(); //展开
+	   });*/
+	   $("#nav_btn_box").click(function(){
+		  $("#nav_btn_box .point").toggleClass("on"); 
+		  $("#nav_btn_box").toggleClass("on"); 
+		  $("#m_nav").toggleClass("act");
+		  $(".nav_mask").fadeToggle();
+	   });
+
+	  $(".nav_mask").click(function(){
+		  $("#nav_btn_box .point").removeClass("on"); 
+		  $("#nav_btn_box").removeClass("on"); 
+		  $(this).fadeToggle();
+		  $(".nav_btn_box").removeClass("act");
+		  $("#m_nav").removeClass("act");
+	  })
+	  
+	  $("#m_nav .close").click(function(){
+		  $("#nav_btn_box .point").removeClass("on"); 
+		  $("#nav_btn_box").removeClass("on"); 
+		  $(".nav_btn_box").removeClass("act");
+		  $("#m_nav").removeClass("act");
+		  $(".nav_mask").fadeOut();
+	  })
+	  
+	$(".n_container .n_left .con ul li i").click(function(){
+		$(this).next().slideToggle();
+		$(this).toggleClass("up");
+	});
+	  //移动端内页导航
+	$("#bnt_sub_nav").click(function(){
+  	$(this).toggleClass("on");
+		$("#sub_nav_content").slideToggle();
+	  });
+
+	$("#sub_nav_content dt.title a").attr("href","javascript:void(0)");
+	$("#sub_nav_content dt.title_on").next("dd").show();
+	$("#sub_nav_content dt.title").click(function() {
+		if ($(this).hasClass("title_on")) {
+			$(this).next("dd").slideToggle();
+			$(this).removeClass("title_on");
+		} else {
+			$("#sub_nav_content dd").slideUp();
+			$("#sub_nav_content dt.title").removeClass("title_on").removeClass("on");
+			$(this).toggleClass("title_on");
+			$(this).next("dd").slideDown();
+		}
+	});  
+	$("#sub_nav_content ul li i").click(function(){
+		$(this).next("ul").slideToggle();
+		$(this).parents("#sub_nav_content ul li").siblings().find("ul").slideUp();
+	});
+	
+	if ($(".list_box00").length) {
+	    $(".list_box00 li").each(function (i) {
+	        $(this).css({ 'transition-delay': i * 200 + 200 + 'ms' });
+	    });
+	}
+	
+	//IE9 兼容placdholder属性
+    function placeholderSupport() {
+        return 'placeholder' in document.createElement('input');
+    }
+    if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+        $("[placeholder]").each(function(){
+            var _this = $(this);
+           // console.log($(this).height());
+            var inputHeight = parseInt(parseInt($(this).height()-2)-14)/2;
+            var inputHeight = parseInt(parseInt(parseInt($(this).height()-2)/2)-7)+'px';
+            _this.parent().css({"position": "relative"});
+            var left = _this.position().left+parseInt(_this.css("padding-left"))+parseInt(_this.css("margin-left"))+"px";
+            var top = parseInt(_this.css("padding-top"));//+parseInt(_this.css("margin-top"))+"px";
+            var top = parseInt(_this.css("padding-top"));//+parseInt(_this.css("margin-top"))+"px";
+            _this.after('<span class="placeholder" data-type="placeholder" style="position: absolute;font-size:14px; top: '+ inputHeight +'; left: ' + left + '">' + _this.attr("placeholder") + '</span>');
+            //_this.after('<span class="placeholder" data-type="placeholder" style="position: absolute; top: 0px; left: ' + left + '">' + _this.attr("placeholder") + '</span>');
+            if(_this.val() != ""){
+                _this.parent().find("span.placeholder").hide();
+            }
+            else{
+                _this.parent().find("span.placeholder").show();
+            }
+        }).on("focus", function(){
+            $(this).parent().find("span.placeholder").hide();
+        }).on("blur", function(){
+            var _this = $(this);
+            if(_this.val() != ""){
+                _this.parent().find("span.placeholder").hide();
+            }
+            else{
+                _this.parent().find("span.placeholder").show();
+            }
+        });
+        // 点击表示placeholder的标签相当于触发input
+        $("span.placeholder").on("click", function(){
+            $(this).hide();
+            $(this).siblings("[placeholder]").trigger("click");
+            $(this).siblings("[placeholder]").trigger("focus");
+        });
+    }
+	
+
+});
