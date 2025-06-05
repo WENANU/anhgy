@@ -1258,7 +1258,7 @@ a:hover .img img{transform: scale(1.05);}
 .ej_main .left .ej_zc_dh li.on a font,.ej_main .left .ej_zc_dh li:hover a font,.ej_main .left .ej_zc_dh li.on a span,.ej_main .left .ej_zc_dh li:hover a span{color: #0066d7;}
 .ej_main .left .ej_zc_dh li.on a,.ej_main .left .ej_zc_dh li:hover a{background: #f4f7fb;}
 .ej_main .left .ej_zc_dh li.on a font,.ej_main .left .ej_zc_dh li:hover a font{font-weight: bold;}
-.ej_main .left .wej_lmmc .wap_ej_btn{position: absolute;width: 4rem;height: 100%;top: 0;right: 0;background:url(../images2022/bnt_sub_nav2.png) no-repeat center center;background-size: 1.5rem;cursor: pointer;display: none;}
+.ej_main .left .wej_lmmc .wap_ej_btn{position: absolute;width: 4rem;height: 100%;top: 0;right: 0;background:url(https://www.ahut.edu.cn/images2022/bnt_sub_nav2.png) no-repeat center center;background-size: 1.5rem;cursor: pointer;display: none;}
 
 
 .ej_main .right{width: 77.94%;float: right;}
@@ -1279,7 +1279,7 @@ a:hover .img img{transform: scale(1.05);}
 @media(max-width: 1024px){
 	.ej_main .left{width: 100%;margin-bottom: 1rem;}
 	.ej_main .right{width: 100%;}
-	.ej_main .left .wej_lmmc{    padding: 1rem 0;    background: url(../images2022/ej_lmmc_bg.png) no-repeat bottom center;background-size: 100%;}
+	.ej_main .left .wej_lmmc{    padding: 1rem 0;    background: url(https://www.ahut.edu.cn/images2022/ej_lmmc_bg.png) no-repeat bottom center;background-size: 100%;}
 	.ej_main .left .ej_zc_dh{display: none;}
 	.ej_main .left .wej_lmmc .wap_ej_btn{display: block;}
 
