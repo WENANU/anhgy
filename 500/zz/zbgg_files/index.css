@@ -1048,7 +1048,7 @@ a:hover .img img{transform: scale(1.05);}
 
 
 
-.foot{background: url(../images2022/foot_bg.jpg) no-repeat center center;background-size: cover;padding: 3.75rem 0;}
+.foot{background: url(https://www.ahut.edu.cn/images2022/foot_bg.jpg) no-repeat center center;background-size: cover;padding: 3.75rem 0;}
 .foot .w1360{display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;flex-direction: row-reverse;}
 .foot .left{width: 50%;}
 .foot .left ul{margin-bottom: 1.8rem;}
